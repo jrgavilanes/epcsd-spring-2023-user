@@ -20,9 +20,11 @@ public class Alert {
     private Long id;
 
     @Column(name = "from", nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date from;
 
     @Column(name = "to", nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date to;
 
     @Column(name = "brand", nullable = false)
