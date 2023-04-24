@@ -22,8 +22,8 @@ public class UserController {
 
     @GetMapping("/")
     @ResponseStatus(HttpStatus.OK)
-    public List<User> getAllCategories() {
-        log.trace("getAllCategories");
+    public List<User> getAllUsers() {
+        log.trace("getAllUsers");
 
         return userRepository.findAll();
     }
