@@ -19,11 +19,11 @@ public class Alert {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "from", nullable = false)
+    @Column(name = "starts", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date from;
 
-    @Column(name = "to", nullable = false)
+    @Column(name = "ends", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date to;
 
@@ -34,6 +34,7 @@ public class Alert {
     private String model;
 
     @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 
 }
