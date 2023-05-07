@@ -68,7 +68,6 @@ public class AlertController {
         log.trace("getAlertsByModelAndDate");
         Date d = new SimpleDateFormat("yyyy-MM-dd").parse(date);
 
-
         return alertRepository.getAlertsByModelAndDate(model, d);
     }
 
@@ -78,7 +77,6 @@ public class AlertController {
                                             @PathVariable("date") String date) throws ParseException {
         log.trace("getUsersToAlert");
         Date d = new SimpleDateFormat("yyyy-MM-dd").parse(date);
-
 
         return alertRepository.getUsersToAlert(model, d);
     }

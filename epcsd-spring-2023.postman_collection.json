@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "66c71abd-d4c3-4170-bc1e-c1d4b21321b9",
+		"name": "epcsd-spring-2023",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7577554"
+	},
+	"item": [
+		{
+			"name": "getUsers",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:18082/user/",
+					"host": [
+						"localhost"
+					],
+					"port": "18082",
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createAlert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"starts\": \"2023-10-01\",\n    \"ends\": \"2023-10-11\",\n    \"brand\": \"marca\",\n    \"model\": \"modelo\"    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:18082/alert",
+					"host": [
+						"localhost"
+					],
+					"port": "18082",
+					"path": [
+						"alert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAlertDetail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:18082/alert/5",
+					"host": [
+						"localhost"
+					],
+					"port": "18082",
+					"path": [
+						"alert",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAlertsByModelAndDate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18082/alert/modelo/2023-10-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18082",
+					"path": [
+						"alert",
+						"modelo",
+						"2023-10-01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAlertsByUserFromTo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18082/alert/1/2023-10-01/2023-10-11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18082",
+					"path": [
+						"alert",
+						"1",
+						"2023-10-01",
+						"2023-10-11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAlerts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:18082/alert",
+					"host": [
+						"localhost"
+					],
+					"port": "18082",
+					"path": [
+						"alert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUsersToAlert",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:18082/alert/modelo1/2023-05-30/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "18082",
+					"path": [
+						"alert",
+						"modelo1",
+						"2023-05-30",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
