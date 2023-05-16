@@ -71,14 +71,15 @@ public class AlertController {
         return alertRepository.getAlertsByModelAndDate(model, d);
     }
 
-    @GetMapping("/{model}/{date}/users")
+    @GetMapping("/{brand}/{model}/{date}/users")
     @ResponseStatus(HttpStatus.OK)
-    public Collection<User> getUsersToAlert(@PathVariable("model") String model,
+    public Collection<User> getUsersToAlert(@PathVariable("brand") String brand,
+                                            @PathVariable("model") String model,
                                             @PathVariable("date") String date) throws ParseException {
         log.trace("getUsersToAlert");
         Date d = new SimpleDateFormat("yyyy-MM-dd").parse(date);
 
-        return alertRepository.getUsersToAlert(model, d);
+        return alertRepository.getUsersToAlert(brand, model, d);
     }
 
 }

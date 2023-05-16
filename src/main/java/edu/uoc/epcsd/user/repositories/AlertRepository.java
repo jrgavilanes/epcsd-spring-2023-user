@@ -10,18 +10,19 @@ import java.util.Collection;
 import java.util.Date;
 
 public interface AlertRepository extends JpaRepository<Alert, Long> {
-    @Query("select a from Alert a where user_id=:userId and starts=:fromDate and ends=:toDate")
+    @Query("select a from Alert a where user_id=:userId and starts>=:fromDate and ends<=:toDate")
     Collection<Alert> getAlertsByUserAndFromTo(@Param("userId") Long userId,
                                                @Param("fromDate") Date fromDate,
                                                @Param("toDate") Date toDate);
 
-    @Query("select a from Alert a where model=:model and starts<=:date and ends>=:date")
+    @Query("select a from Alert a where model=:model and :date>=starts and :date<=ends")
     Collection<Alert> getAlertsByModelAndDate(@Param("model") String model,
                                               @Param("date") Date date);
 
 
-    @Query("select distinct a.user from Alert a where model=:model and starts<=:date and ends>=:date")
-    Collection<User> getUsersToAlert(@Param("model") String model,
+    @Query("select distinct a.user from Alert a where brand = :brand and model=:model and starts<=:date and ends>=:date")
+    Collection<User> getUsersToAlert(@Param("brand") String brand,
+                                     @Param("model") String model,
                                      @Param("date") Date date);
 
 

@@ -1,6 +1,8 @@
 package edu.uoc.epcsd.user.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import lombok.*;
 
 import javax.persistence.*;

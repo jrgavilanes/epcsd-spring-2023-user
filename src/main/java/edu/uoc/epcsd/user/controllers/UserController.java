@@ -29,8 +29,8 @@ public class UserController {
 
     @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
-    public void createUser(@RequestBody @Valid User user) {
-        userRepository.save(user);
+    public User createUser(@RequestBody @Valid User user) {
+        return userRepository.save(user);
     }
 
 }
